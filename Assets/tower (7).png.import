@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dulkesjdd1gwv"
-path="res://.godot/imported/Goblin.png-1109047f2554cf805237ef60ccb88054.ctex"
+uid="uid://8rhqhgnmlp1x"
+path="res://.godot/imported/tower (7).png-dcf73b6641c2c9cf7371c0f5744f96ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemy Sprites/Goblin.png"
-dest_files=["res://.godot/imported/Goblin.png-1109047f2554cf805237ef60ccb88054.ctex"]
+source_file="res://Assets/tower (7).png"
+dest_files=["res://.godot/imported/tower (7).png-dcf73b6641c2c9cf7371c0f5744f96ef.ctex"]
 
 [params]
 

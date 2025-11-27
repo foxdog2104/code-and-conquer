@@ -10,7 +10,7 @@ func _ready():
 	hide()
 	leave_confirm.hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
+	
 func resume():
 	get_tree().paused = false
 	hide()
@@ -22,6 +22,8 @@ func pause():
 	show()
 	$AnimationPlayer.play("blur")
 	pause_button.hide()
+	settings_bgs.play()
+
 
 func _on_resume_pressed() -> void:
 	resume()
