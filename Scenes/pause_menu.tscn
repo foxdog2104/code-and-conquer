@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cc2s8tunkrlm5"]
+[gd_scene load_steps=16 format=3 uid="uid://cc2s8tunkrlm5"]
 
-[ext_resource type="Shader" path="res://Scenes/pause_menu.gdshader" id="1_emv3i"]
+[ext_resource type="Shader" uid="uid://djnnud76ids84" path="res://Scenes/pause_menu.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://c0wpacp8vpvoh" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="PackedScene" uid="uid://bpukuxrlas8xm" path="res://Scenes/Audios/SettingsBGS.tscn" id="3_1och7"]
-[ext_resource type="FontFile" uid="uid://b4iorubhnpuyu" path="res://Assets/BoldPixels.ttf" id="3_bpi0q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_emv3i"]
 shader = ExtResource("1_emv3i")
@@ -264,6 +263,8 @@ theme_override_constants/line_spacing = 3
 theme_override_font_sizes/font_size = 40
 text = "Paused"
 horizontal_alignment = 1
+
+[node name="SettingsBgs" parent="." instance=ExtResource("3_1och7")]
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

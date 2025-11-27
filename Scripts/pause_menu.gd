@@ -4,6 +4,8 @@ extends Control
 @onready var leave_confirm = $LeaveConfirm
 @onready var main_panel = $PanelContainer
 @onready var paused_label = $Label
+@onready var settings_bgs: AudioStreamPlayer = $SettingsBgs
+
 
 func _ready():
 	$AnimationPlayer.play("RESET")
