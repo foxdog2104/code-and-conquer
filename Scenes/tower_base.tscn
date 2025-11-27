@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkp4okqfx7kob"]
+[gd_scene load_steps=8 format=3 uid="uid://bkp4okqfx7kob"]
 
 [ext_resource type="Script" uid="uid://b221vt7th86iw" path="res://Scripts/tower_base.gd" id="1_dbwjx"]
-[ext_resource type="Texture2D" uid="uid://bklemcexlpe57" path="res://Assets/Sprite-0001.png" id="2_gcnb3"]
 [ext_resource type="PackedScene" uid="uid://bolk5fk66ojl" path="res://Scenes/Workspace_v2.tscn" id="3_gcnb3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sistd"]
@@ -51,10 +50,8 @@ corner_radius_bottom_left = 65
 script = ExtResource("1_dbwjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gcnb3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_sistd")
 
 [node name="Button" type="Button" parent="."]

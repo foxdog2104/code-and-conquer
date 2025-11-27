@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbwwcui2gx8dv"]
+[gd_scene load_steps=6 format=3 uid="uid://dbwwcui2gx8dv"]
 
 [ext_resource type="Script" uid="uid://b5kd7pnbop1y1" path="res://fire_ball.gd" id="1_o46rr"]
 [ext_resource type="Texture2D" uid="uid://csrgy6yb8mvo" path="res://Assets/ballista arrow.png" id="2_63e0a"]
+[ext_resource type="AudioStream" uid="uid://cwkukay72rw7e" path="res://Sounds/SFX/FireballSFX.wav" id="3_63e0a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4j73p"]
 radius = 5.0
@@ -31,6 +32,9 @@ collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_p3s34")
+
+[node name="FireballSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_63e0a")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
