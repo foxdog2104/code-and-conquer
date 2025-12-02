@@ -1,11 +1,13 @@
 extends Control
 @onready var settings_bgs: AudioStreamPlayer = $SettingsBgs
+@onready var save_loader: LevelSaverLoader = $SaveLoader
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	settings_bgs.play()
-
+	save_loader.save()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

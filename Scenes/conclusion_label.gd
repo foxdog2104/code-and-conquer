@@ -5,8 +5,8 @@ extends Label
 
 func _ready() -> void:
 	visible = false
-	await save_loader
-	save_loader.save()
+	await save_loader.ready
+	save_loader.save() #whenever we saved  lavel a Label will show up
 	
 func  check_visibility():
 	var is_level_finished = save_loader.level_status[level_index]
