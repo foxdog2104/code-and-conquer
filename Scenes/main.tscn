@@ -4441,7 +4441,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_bo1nx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
-size = Vector2(622.30774, 1663.8462)
+size = Vector2(622.30774, 1367.3079)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bp64"]
 size = Vector2(1787.6921, 411.9231)
@@ -4540,7 +4540,7 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInputArea"]
-position = Vector2(-100, 686.15393)
+position = Vector2(-100, 834.4231)
 shape = SubResource("RectangleShape2D_21xkr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerInputArea"]
@@ -4595,53 +4595,53 @@ shape = SubResource("RectangleShape2D_wsu2k")
 position = Vector2(2167.6924, -30.769247)
 shape = SubResource("CircleShape2D_k12tt")
 
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D14"]
-position = Vector2(58.461628, 55.38462)
-shape = SubResource("CircleShape2D_k12tt")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D14/CollisionShape2D14"]
-position = Vector2(64.61548, 69.230774)
-shape = SubResource("CircleShape2D_k12tt")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D14"]
-position = Vector2(-1780.0002, 1195.3846)
-shape = SubResource("CircleShape2D_k12tt")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D14/CollisionShape2D15"]
-position = Vector2(58.461628, 55.38462)
-shape = SubResource("CircleShape2D_k12tt")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D14/CollisionShape2D15/CollisionShape2D14"]
-position = Vector2(132.3078, 69.230774)
-shape = SubResource("CircleShape2D_k12tt")
-
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="PlayerInputArea"]
 position = Vector2(383.07697, 730.7692)
-shape = SubResource("CircleShape2D_h1bgf")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D15"]
-position = Vector2(69.230774, -67.69238)
-shape = SubResource("CircleShape2D_h1bgf")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D15/CollisionShape2D15"]
-position = Vector2(133.84616, -70.76912)
-shape = SubResource("CircleShape2D_h1bgf")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D15"]
-position = Vector2(1649.2308, 60.00004)
-shape = SubResource("CircleShape2D_h1bgf")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D15/CollisionShape2D16"]
-position = Vector2(132.30779, -66.15381)
-shape = SubResource("CircleShape2D_h1bgf")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="PlayerInputArea/CollisionShape2D15/CollisionShape2D16/CollisionShape2D15"]
-position = Vector2(67.692345, -66.15388)
 shape = SubResource("CircleShape2D_h1bgf")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="PlayerInputArea"]
 position = Vector2(2212.3079, 1130.7693)
 shape = SubResource("CircleShape2D_b3802")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(2226.154, 24.615372)
+shape = SubResource("CircleShape2D_k12tt")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(387.69217, 1164.6155)
+shape = SubResource("CircleShape2D_k12tt")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(452.3077, 663.0769)
+shape = SubResource("CircleShape2D_h1bgf")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(2164.6155, 724.6155)
+shape = SubResource("CircleShape2D_h1bgf")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(2032.308, 790.7693)
+shape = SubResource("CircleShape2D_h1bgf")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(2290.7698, 93.846146)
+shape = SubResource("CircleShape2D_k12tt")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(446.15378, 1220.0004)
+shape = SubResource("CircleShape2D_k12tt")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(586.15393, 592.30786)
+shape = SubResource("CircleShape2D_h1bgf")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(2232.3079, 658.4617)
+shape = SubResource("CircleShape2D_h1bgf")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="PlayerInputArea"]
+position = Vector2(578.46155, 1289.2313)
+shape = SubResource("CircleShape2D_k12tt")
 
 [node name="TowerDraggable" parent="." instance=ExtResource("6_21xkr")]
 offset_left = 26.153849
