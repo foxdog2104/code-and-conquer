@@ -50,6 +50,7 @@ theme_override_font_sizes/font_size = 20
 text = "Level 1"
 
 [node name="SettingsBgs" parent="." instance=ExtResource("3_lx4vd")]
+bus = &"BGM"
 
 [node name="ConclusionLabel" type="Label" parent="."]
 layout_mode = 0

@@ -6,3 +6,4 @@
 process_mode = 3
 stream = ExtResource("1_0fc4k")
 volume_db = 0.1
+bus = &"BGM"

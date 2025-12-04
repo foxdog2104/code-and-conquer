@@ -4668,5 +4668,6 @@ offset_bottom = 830.8462
 
 [node name="Battle(chosic_com)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_344ge")
+bus = &"BGM"
 
 [connection signal="pressed" from="PauseMenu/PauseButton" to="PauseMenu/PauseMenu" method="_on_pause_button_pressed"]

@@ -31,6 +31,7 @@ shape = SubResource("CircleShape2D_xr04u")
 shape = SubResource("CircleShape2D_ea12f")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 offset_left = -464.0
 offset_top = -450.0
 offset_right = 482.0

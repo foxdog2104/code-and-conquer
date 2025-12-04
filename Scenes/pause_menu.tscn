@@ -265,6 +265,7 @@ text = "Paused"
 horizontal_alignment = 1
 
 [node name="SettingsBgs" parent="." instance=ExtResource("3_1och7")]
+bus = &"BGM"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
