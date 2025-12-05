@@ -31,11 +31,11 @@ shape = SubResource("CircleShape2D_xr04u")
 shape = SubResource("CircleShape2D_ea12f")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -464.0
-offset_top = -450.0
+offset_top = -451.0
 offset_right = 482.0
-offset_bottom = 465.0
+offset_bottom = 464.0
 
 [connection signal="timeout" from="ROFTimer" to="." method="_on_rof_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
