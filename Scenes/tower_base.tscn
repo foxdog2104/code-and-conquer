@@ -47,6 +47,7 @@ corner_radius_bottom_right = 65
 corner_radius_bottom_left = 65
 
 [node name="TowerBase" type="Area2D"]
+collision_mask = 0
 script = ExtResource("1_dbwjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

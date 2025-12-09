@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cnjlqcwlg616t"]
+[gd_scene load_steps=30 format=4 uid="uid://cnjlqcwlg616t"]
 
 [ext_resource type="Script" uid="uid://cashaswi8y7lm" path="res://Scenes/main_level.gd" id="1_344ge"]
 [ext_resource type="Texture2D" uid="uid://dvfvo8pc54p10" path="res://Assets/towerDefense_tilesheet.png" id="1_jjgbg"]
@@ -4491,6 +4491,9 @@ radius = 60.07883
 font_size = 98
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12tt"]
+size = Vector2(1883.4618, 164.2308)
+
 [node name="Main" type="Node2D"]
 scale = Vector2(0.65, 0.65)
 script = ExtResource("1_344ge")
@@ -4669,5 +4672,14 @@ offset_bottom = 830.8462
 [node name="Battle(chosic_com)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_344ge")
 bus = &"BGM"
+
+[node name="NotplaceablePlayerArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NotplaceablePlayerArea"]
+position = Vector2(1561.3464, 196.3462)
+shape = SubResource("RectangleShape2D_k12tt")
+debug_color = Color(0.9588215, 0, 0.5276942, 0.41960785)
 
 [connection signal="pressed" from="PauseMenu/PauseButton" to="PauseMenu/PauseMenu" method="_on_pause_button_pressed"]
