@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckt3kripe24w0"]
+[gd_scene load_steps=7 format=3 uid="uid://ckt3kripe24w0"]
 
-[ext_resource type="PackedScene" uid="uid://20bt8ydyr7k6" path="res://Scenes/WizardTowerPanel.tscn" id="1_jxero"]
 [ext_resource type="Texture2D" uid="uid://phtwct4bysnn" path="res://Assets/life.png" id="2_m78vo"]
 [ext_resource type="Script" uid="uid://2nbgs47plu6s" path="res://Scripts/ui_health_plate.gd" id="3_nf4gj"]
 [ext_resource type="Script" uid="uid://c560tx8hvxpse" path="res://Scenes/currency_plate.gd" id="4_2246s"]
@@ -9,26 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cqpt4xdqg83in" path="res://Scenes/Audios/TowerPlacement.tscn" id="6_m78vo"]
 
 [node name="UI" type="CanvasLayer"]
-
-[node name="Panel" type="Panel" parent="."]
-offset_right = 256.0
-offset_bottom = 1664.0
-
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 174.0
-offset_bottom = 203.0
-
-[node name="Panel" parent="Panel/FlowContainer" instance=ExtResource("1_jxero")]
-layout_mode = 2
+layer = 5
 
 [node name="HealthPlate" type="TextureRect" parent="."]
-offset_left = 258.0
-offset_top = 4.0
-offset_right = 365.0
-offset_bottom = 99.0
+offset_left = 180.0
+offset_right = 270.0
+offset_bottom = 90.0
 texture = ExtResource("2_m78vo")
 expand_mode = 5
 script = ExtResource("3_nf4gj")
@@ -47,20 +32,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CurrencyPlate" type="TextureRect" parent="."]
-offset_left = 250.0
-offset_top = 106.0
-offset_right = 370.0
-offset_bottom = 203.0
+offset_left = 271.0
+offset_top = -6.0
+offset_right = 371.0
+offset_bottom = 94.0
 texture = ExtResource("5_smcll")
 expand_mode = 5
 script = ExtResource("4_2246s")
 
 [node name="CurrencyLabel" type="Label" parent="CurrencyPlate"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 36.0
-offset_right = 80.0
-offset_bottom = 75.0
+offset_left = 36.0
+offset_top = 33.0
+offset_right = 76.0
+offset_bottom = 72.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.60784316)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_smcll")

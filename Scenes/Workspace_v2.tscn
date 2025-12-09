@@ -114,6 +114,8 @@ size_flags_horizontal = 8
 text = "Delete"
 
 [node name="T1A2D" type="Area2D" parent="Tower components/HBoxContainer/Tower1" node_paths=PackedStringArray("myList", "myListHeader", "myListTitle", "myHeaderButton", "myScrollContainer")]
+collision_layer = 32
+collision_mask = 32
 script = ExtResource("2_55xjc")
 myList = NodePath("../T1List")
 myListHeader = NodePath("../T1List/T1Header")
@@ -162,6 +164,8 @@ size_flags_horizontal = 8
 text = "Delete"
 
 [node name="T2A2D" type="Area2D" parent="Tower components/HBoxContainer/Tower2" node_paths=PackedStringArray("myList", "myListHeader", "myListTitle", "myHeaderButton", "myScrollContainer")]
+collision_layer = 32
+collision_mask = 32
 script = ExtResource("2_55xjc")
 myList = NodePath("../T2List")
 myListHeader = NodePath("../T2List/T2Header")
@@ -210,6 +214,8 @@ size_flags_horizontal = 8
 text = "Delete"
 
 [node name="T3A2D" type="Area2D" parent="Tower components/HBoxContainer/Tower3" node_paths=PackedStringArray("myList", "myListHeader", "myListTitle", "myHeaderButton", "myScrollContainer")]
+collision_layer = 32
+collision_mask = 32
 script = ExtResource("2_55xjc")
 myList = NodePath("../T3List")
 myListHeader = NodePath("../T3List/T3Header")

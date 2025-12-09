@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var workspace:HBoxContainer = $"../Workspace"
 @onready var toggler:Button = $WorkspaceToggler
+@onready var timer: Timer = $"../Timer"
 
 var spawnLocation:Vector2
 
@@ -13,8 +14,14 @@ func _ready():
 
 
 func _on_button_pressed():
-	toggler.visible = !toggler.visible
+	if toggler.visible == false:
+		toggler.visible = !toggler.visible
+		timer.start()
 
 
 func _on_workspace_toggeler_pressed():
 	workspace.visible = true
+
+
+func _on_timer_timeout() -> void:
+	toggler.visible = false
