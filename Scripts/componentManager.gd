@@ -103,6 +103,7 @@ func addCodeBlock(newBlock:PackedScene):
 	if self.hasComponent == true:
 		var temp = newBlock.instantiate()
 		myList.add_child(temp)
+		GameState.spend(3)
 	elif self.hasComponent == false:
 		print("Please add a component")
 	pass
