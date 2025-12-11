@@ -20,6 +20,10 @@ var myComponentID = null
 var mouseHovering = false
 
 func _process(_delta):
+	if myWorkspace.visible:
+		monitorable = true
+	else: 
+		monitorable = false
 	if (Input.is_action_just_pressed("secret")):
 		print(testingName,self.mouseHovering)
 		print(self.mouseHovering)
