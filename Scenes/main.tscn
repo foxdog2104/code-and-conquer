@@ -95,9 +95,10 @@ position = Vector2(512, 0)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HealthPlate" type="TextureRect" parent="UI"]
-offset_top = 905.0
-offset_right = 90.0
-offset_bottom = 995.0
+offset_left = 2.0
+offset_top = 887.0
+offset_right = 92.0
+offset_bottom = 977.0
 texture = ExtResource("3_wsu2k")
 expand_mode = 5
 script = ExtResource("4_k12tt")
@@ -116,10 +117,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CurrencyPlate" type="TextureRect" parent="UI"]
-offset_left = -4.0
-offset_top = 977.0
-offset_right = 96.0
-offset_bottom = 1077.0
+offset_left = -2.0
+offset_top = 959.0
+offset_right = 98.0
+offset_bottom = 1059.0
 texture = ExtResource("6_b3802")
 expand_mode = 5
 script = ExtResource("7_fevyy")

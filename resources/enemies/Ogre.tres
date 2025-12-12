@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="enemyBase" load_steps=3 format=3 uid="uid://evtnuabtbrwr"]
 
 [ext_resource type="Script" uid="uid://qay2645cce68" path="res://resources/resource scripts/Enemy.gd" id="1_7wpi7"]
-[ext_resource type="Texture2D" uid="uid://bex6ygnac0n7s" path="res://Assets/Enemy Sprites/Ogre.png" id="1_o86qe"]
+[ext_resource type="Texture2D" uid="uid://b0hjtdf3jp2j5" path="res://Assets/Ogre.png" id="1_o86qe"]
 
 [resource]
 script = ExtResource("1_7wpi7")
+visualScale = 0.15
 id = 2
 health = 15.0
 playerDamage = 3
