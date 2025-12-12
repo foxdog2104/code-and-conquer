@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_j3e53")
+visualScale = 0.1
 id = 1
 health = 5.0
 speed = 0.025

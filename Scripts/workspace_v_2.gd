@@ -59,3 +59,5 @@ func _on_finish_button_pressed():
 		print("My spawn location: ", myTower.spawnLocation)
 		myTower.add_child(temp)
 		
+	set_process_input(false)
+		

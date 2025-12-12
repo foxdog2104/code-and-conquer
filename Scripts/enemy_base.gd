@@ -13,6 +13,7 @@ var killReward:int
 func _ready(): 
 	if enemyStats == null:
 		enemyStats = preload("res://resources/enemies/Goblin.tres")
+	%EnemySprite.scale = Vector2(enemyStats.visualScale, enemyStats.visualScale)
 	id = enemyStats.id
 	health = enemyStats.health
 	player_damage = enemyStats.playerDamage

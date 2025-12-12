@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://blv7l3euir4n5"]
+
+[ext_resource type="Script" uid="uid://b3uvl57lwvpx4" path="res://wave_manager.gd" id="1_rlkas"]
+
+[sub_resource type="Curve2D" id="Curve2D_k7iqh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1075, 504, 0, 0, 0, 0, 1157, 577, 0, 0, 0, 0, 1152, 699, 0, 0, 0, 0, 1022, 759, 0, 0, 0, 0, 835, 624, 0, 0, 0, 0, 838, 455, 0, 0, 0, 0, 982, 314, 0, 0, 0, 0, 1193, 310, 0, 0, 0, 0, 1375, 488, 0, 0, 0, 0, 1370, 785, 0, 0, 0, 0, 1207, 944, 0, 0, 0, 0, 975, 999, 0, 0, 0, 0, 713, 933, 0, 0, 0, 0, 579, 757, 0, 0, 0, 0, 540, 572, 0, 0, 0, 0, 592, 345, 0, 0, 0, 0, 796, 126, 0, 0, 0, 0, 1027, 83, 0, 0, 0, 0, 1281, 112, 0, 0, 0, 0, 1570, 360, 0, 0, 0, 0, 1619, 509, 0, 0, 0, 0, 1623, 984)
+}
+point_count = 22
+
+[node name="Stage3" type="Node2D"]
+
+[node name="EnemyPath" type="Path2D" parent="."]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_k7iqh")
+
+[node name="WaveManager" type="Node" parent="."]
+script = ExtResource("1_rlkas")
+
+[node name="Timer" type="Timer" parent="WaveManager"]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="WaveManager"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.625
+offset_top = -74.0
+offset_right = 33.625
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 35
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="WaveManager/Timer" to="WaveManager" method="_on_timer_timeout"]
