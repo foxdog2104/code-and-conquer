@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7njdi3bjufwk"]
+
+[ext_resource type="PackedScene" uid="uid://b6hks6ui5fco5" path="res://Scenes/WaveManager.tscn" id="1_x1lst"]
+
+[sub_resource type="Curve2D" id="Curve2D_i7w83"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 189, 130, 0, 0, 0, 0, 192, 1360, 0, 0, 0, 0, 280, 1465, 0, 0, 0, 0, 486, 1474, 0, 0, 0, 0, 571, 1351, 0, 0, 0, 0, 565, 304, 0, 0, 0, 0, 702, 193, 0, 0, 0, 0, 819, 187, 0, 0, 0, 0, 962, 307, 0, 0, 0, 0, 956, 1343, 0, 0, 0, 0, 1053, 1471, 0, 0, 0, 0, 1264, 1468, 0, 0, 0, 0, 1359, 1331, 0, 0, 0, 0, 1353, 313, 0, 0, 0, 0, 1416, 184, 0, 0, 0, 0, 1655, 176, 0, 0, 0, 0, 1732, 318, 0, 0, 0, 0, 1727, 1343, 0, 0, 0, 0, 1801, 1468, 0, 0, 0, 0, 2058, 1474, 0, 0, 0, 0, 2123, 1348, 0, 0, 0, 0, 2115, 144)
+}
+point_count = 22
+
+[node name="Stage2" type="Node2D"]
+
+[node name="EnemyPath" type="Path2D" parent="."]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_i7w83")
+
+[node name="WaveManager" parent="." instance=ExtResource("1_x1lst")]
+enemy_path_path = NodePath("../EnemyPath")

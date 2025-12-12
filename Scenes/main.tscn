@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=27 format=4 uid="uid://cnjlqcwlg616t"]
+=======
+[gd_scene load_steps=46 format=3 uid="uid://cnjlqcwlg616t"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dvfvo8pc54p10" path="res://Assets/towerDefense_tilesheet.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://ckt3kripe24w0" path="res://Scenes/ui.tscn" id="3_8gbba"]
@@ -8,6 +12,67 @@
 [ext_resource type="PackedScene" uid="uid://dkroyxrbq45ph" path="res://Scenes/tower_draggable.tscn" id="6_21xkr"]
 [ext_resource type="Script" uid="uid://ci338rnqxwu77" path="res://test.gd" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://f5hhmpen82rf" path="res://Scenes/game_over_menu.tscn" id="8_ynf5e"]
+[ext_resource type="Script" uid="uid://be8263ortv5hw" path="res://Scenes/win_screen.gd" id="11_h1bgf"]
+[ext_resource type="Shader" uid="uid://djnnud76ids84" path="res://Scenes/pause_menu.gdshader" id="11_k12tt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_emv3i"]
+shader = ExtResource("11_k12tt")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0w1u"]
+bg_color = Color(0.9372549, 0.91764706, 0.8235294, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.601223, 0.601223, 0.60122293, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myy0f"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_k0w1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseMenu/ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_emv3i"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseMenu/ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1och7"]
+_data = {
+&"RESET": SubResource("Animation_k0w1u"),
+&"blur": SubResource("Animation_emv3i")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
 texture = ExtResource("1_jjgbg")
@@ -4527,6 +4592,72 @@ size_flags_vertical = 4
 icon = ExtResource("5_kry3j")
 flat = true
 
+[node name="WinScreen" type="CanvasLayer" parent="."]
+
+[node name="WinScreen" type="Control" parent="WinScreen"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -56.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("11_h1bgf")
+
+[node name="ColorRect" type="ColorRect" parent="WinScreen/WinScreen"]
+material = SubResource("ShaderMaterial_emv3i")
+layout_mode = 0
+offset_left = -883.0
+offset_top = -639.0
+offset_right = 1267.0
+offset_bottom = 817.0
+
+[node name="PanelContainer" type="PanelContainer" parent="WinScreen/WinScreen"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -46.0
+offset_right = 419.0
+offset_bottom = 156.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_k0w1u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinScreen/WinScreen/PanelContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 7
+
+[node name="victoryLabel" type="Label" parent="WinScreen/WinScreen/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.80017555, 0.5599557, 0.19287965, 1)
+theme_override_font_sizes/font_size = 24
+text = "Congratulations, you won!"
+
+[node name="MainMenu" type="Button" parent="WinScreen/WinScreen/PanelContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_myy0f")
+text = "Main Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinScreen/WinScreen"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_1och7")
+}
+
 [node name="StageTest" parent="." instance=ExtResource("6_6bp64")]
 scale = Vector2(1.55, 1.55)
 
@@ -4664,3 +4795,5 @@ offset_right = 1461.3077
 offset_bottom = 550.8462
 
 [connection signal="pressed" from="PauseMenu/PauseButton" to="PauseMenu/PauseMenu" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="WinScreen/WinScreen/PanelContainer/VBoxContainer/MainMenu" to="WinScreen/WinScreen" method="_on_leave_pressed"]
+[connection signal="pressed" from="WinScreen/WinScreen/PanelContainer/VBoxContainer/MainMenu" to="WinScreen/WinScreen" method="_on_continue_pressed"]

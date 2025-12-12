@@ -1,6 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://ckf68xhraeukf"]
 
 [ext_resource type="Script" uid="uid://b3uvl57lwvpx4" path="res://wave_manager.gd" id="1_u7tui"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://ckf68xhraeukf"]
+
+[ext_resource type="Script" uid="uid://chkwu2i45ypam" path="res://Scenes/stages/stage_1.gd" id="1_h250e"]
+[ext_resource type="PackedScene" uid="uid://b6hks6ui5fco5" path="res://Scenes/WaveManager.tscn" id="2_xoghn"]
+[ext_resource type="PackedScene" uid="uid://de8sxy4w0ybdk" path="res://Scenes/SaverLoader.tscn" id="4_1pdsq"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Curve2D" id="Curve2D_jjgbg"]
 _data = {
@@ -9,6 +17,7 @@ _data = {
 point_count = 13
 
 [node name="Stage1" type="Node2D"]
+script = ExtResource("1_h250e")
 
 [node name="EnemyPath" type="Path2D" parent="."]
 unique_name_in_owner = true
@@ -16,9 +25,10 @@ position = Vector2(340, 0)
 scale = Vector2(0.65, 0.65)
 curve = SubResource("Curve2D_jjgbg")
 
-[node name="WaveManager" type="Node" parent="."]
-script = ExtResource("1_u7tui")
+[node name="WaveManager" parent="." instance=ExtResource("2_xoghn")]
+enemy_path_path = NodePath("../EnemyPath")
 
+<<<<<<< Updated upstream
 [node name="Timer" type="Timer" parent="WaveManager"]
 wait_time = 12.0
 one_shot = true
@@ -39,3 +49,6 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 35
 
 [connection signal="timeout" from="WaveManager/Timer" to="WaveManager" method="_on_timer_timeout"]
+=======
+[node name="SaveLoader" parent="." instance=ExtResource("4_1pdsq")]
+>>>>>>> Stashed changes

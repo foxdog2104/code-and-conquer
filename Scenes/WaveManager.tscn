@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6hks6ui5fco5"]
+
+[ext_resource type="Script" uid="uid://b3uvl57lwvpx4" path="res://wave_manager.gd" id="1_6bx68"]
+[ext_resource type="Texture2D" uid="uid://cutokw8vfdwpo" path="res://Assets/Play.png" id="2_8bq3m"]
+
+[node name="WaveManager" type="Node"]
+script = ExtResource("1_6bx68")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -100.0
+offset_right = 33.25
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 35
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartWaveButton" type="TextureButton" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1792.0
+offset_top = 90.0
+offset_right = 2816.0
+offset_bottom = 1114.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("2_8bq3m")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
