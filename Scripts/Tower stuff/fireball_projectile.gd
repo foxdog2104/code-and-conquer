@@ -24,7 +24,9 @@ func _physics_process(_delta: float) -> void:
 		
 		move_and_slide()
 	else:
+		queue_free()
 		return
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
