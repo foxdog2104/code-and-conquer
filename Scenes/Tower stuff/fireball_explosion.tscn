@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://brh08rsn3qwra"]
+
+[ext_resource type="Texture2D" uid="uid://do56mjnvr6djs" path="res://Assets/fireballexplosion.png" id="1_3wlh7"]
+[ext_resource type="Script" uid="uid://bx5vlsgp6j57r" path="res://Scenes/Tower stuff/fireball_explosion.gd" id="1_ryflu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ryflu"]
+radius = 131.09538
+
+[node name="FireballExplosion" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ryflu")
+bulletDamage = 6.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ryflu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3wlh7")
+
+[node name="vTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="vTimer" to="." method="_on_v_timer_timeout"]

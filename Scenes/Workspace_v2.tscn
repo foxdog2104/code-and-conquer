@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://bolk5fk66ojl"]
 
-[ext_resource type="PackedScene" uid="uid://r872rcng7xtd" path="res://Scenes/code components/shop_component.tscn" id="1_hau5l"]
 [ext_resource type="Script" uid="uid://dgi815tqi455p" path="res://Scripts/workspace_v_2.gd" id="1_w8g6c"]
 [ext_resource type="Script" uid="uid://c6og0dtn5bbct" path="res://Scripts/componentManager.gd" id="2_55xjc"]
-[ext_resource type="PackedScene" uid="uid://d2fv4cg2kx7i5" path="res://Scenes/code components/ShopLists/ballista_list.tscn" id="2_o08bu"]
 [ext_resource type="StyleBox" uid="uid://cdv0etvurol6w" path="res://Assets/Styles/Default.tres" id="3_yjswq"]
+[ext_resource type="PackedScene" uid="uid://diajxnyxhaw2w" path="res://Scenes/code components/ShopComponents/ballista_component.tscn" id="4_yjswq"]
+[ext_resource type="PackedScene" uid="uid://dmn0wnf5kdfb3" path="res://Scenes/code components/ShopComponents/wizard_component.tscn" id="6_vip0r"]
 
 [sub_resource type="Theme" id="Theme_jpdei"]
 
@@ -247,15 +247,17 @@ layout_mode = 2
 mouse_filter = 2
 metadata/_tab_index = 0
 
-[node name="ShopComponent" parent="Shop container/TabContainer/Base" instance=ExtResource("1_hau5l")]
+[node name="BallistaComponent" parent="Shop container/TabContainer/Base" instance=ExtResource("4_yjswq")]
 layout_mode = 2
-codeToLoad = ExtResource("2_o08bu")
+
+[node name="ShopComponent2" parent="Shop container/TabContainer/Base" instance=ExtResource("6_vip0r")]
+layout_mode = 2
 
 [connection signal="pressed" from="Component container/VSplitContainer/FinishButton" to="." method="_on_finish_button_pressed"]
 [connection signal="pressed" from="Tower components/HBoxContainer/Tower1/T1List/T1Header/T1Button" to="Tower components/HBoxContainer/Tower1/T1A2D" method="_pressed"]
 [connection signal="mouse_entered" from="Tower components/HBoxContainer/Tower1/T1A2D" to="Tower components/HBoxContainer/Tower1/T1A2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Tower components/HBoxContainer/Tower1/T1A2D" to="Tower components/HBoxContainer/Tower1/T1A2D" method="_on_mouse_exited"]
-[connection signal="pressed" from="Tower components/HBoxContainer/Tower2/T2List/T2Header/T2Button" to="Tower components/HBoxContainer/Tower1/T1A2D" method="_pressed"]
+[connection signal="pressed" from="Tower components/HBoxContainer/Tower2/T2List/T2Header/T2Button" to="Tower components/HBoxContainer/Tower2/T2A2D" method="_pressed"]
 [connection signal="mouse_entered" from="Tower components/HBoxContainer/Tower2/T2A2D" to="Tower components/HBoxContainer/Tower2/T2A2D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Tower components/HBoxContainer/Tower2/T2A2D" to="Tower components/HBoxContainer/Tower2/T2A2D" method="_on_mouse_exited"]
 [connection signal="pressed" from="Tower components/HBoxContainer/Tower3/T3List/T3Header/T3Button" to="Tower components/HBoxContainer/Tower3/T3A2D" method="_pressed"]

@@ -12,6 +12,7 @@ anchor_bottom = 0.99959266
 offset_right = 0.23999023
 offset_bottom = 0.4399414
 script = ExtResource("1_ldl4c")
+titleText = "Activates every second"
 metadata/_edit_use_anchors_ = true
 
 [node name="FireBallista" parent="." instance=ExtResource("1_aiap3")]

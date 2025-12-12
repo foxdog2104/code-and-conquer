@@ -6,8 +6,10 @@ var currentTarget
 var loadedArrows:int = 0
 var currentTargets = []
 var spawnLocation:Vector2
+@onready var myBullets = %BulletContainer
 
 var funcOrder:Array[int]
+var funcTower:Array[int]
 var currentFunc:int = 0
 
 
@@ -29,46 +31,22 @@ func execute(select:int):
 			print("Invalid function")
 
 func _on_rof_timer_timeout():
-	if enemyArray.is_empty() == false:
-		print("DO THE TING")
 	if currentFunc >= funcOrder.size():
 		currentFunc = 0
-	execute(funcOrder[currentFunc])
+	print(funcOrder[currentFunc])
+	TowerFunctions.doFunc(self.get_parent(),self,funcOrder[currentFunc])
 	currentFunc = currentFunc + 1
 	
 
 func getTarget():
-	if is_instance_valid(currentTarget):
-		print("Target still valid")
-	else:
-		var tempArray = []
-		currentTargets = get_node("Area2D").get_overlapping_bodies()
-		for i in currentTargets:
-			if "Enemy" in i.name:
-				tempArray.append(i)
-		var currTarget = null
-			
-		for i in tempArray:
-			if currTarget == null:
-				currTarget = i.get_node("../")
-			else:
-				if i.get_parent().get_progress() > currTarget.get_progress():
-					currTarget = i.get_node("../")
-		currentTarget = currTarget
+	TowerFunctions.doFunc(self.get_parent(),self,funcOrder[currentFunc])
+	#
 
 func loadArrow():
-	loadedArrows = loadedArrows + 1
+	TowerFunctions.doFunc(self.get_parent(),self,funcOrder[currentFunc])
 
 func fireArrow():
-	if is_instance_valid(currentTarget):
-		var tempBullet = arrow.instantiate()
-		tempBullet.position = spawnLocation
-		tempBullet.target = currentTarget
-		%BulletContainer.add_child(tempBullet)
-	else:
-		#TODO should have a little notification display saying no arrows
-		print("No target!")
-		pass
+	TowerFunctions.doFunc(self.get_parent(),self,funcOrder[currentFunc])
 
 
 func _on_area_2d_body_entered(body) -> void:

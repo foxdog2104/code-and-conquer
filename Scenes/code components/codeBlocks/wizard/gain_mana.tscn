@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpwnuw6mnqaqv"]
+[gd_scene load_steps=3 format=3 uid="uid://celbjy4ef7qie"]
 
-[ext_resource type="Script" uid="uid://rrye72sagf1r" path="res://Scripts/code_component.gd" id="1_y6r2o"]
+[ext_resource type="Script" uid="uid://rrye72sagf1r" path="res://Scripts/code_component.gd" id="1_muhpl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21vuq"]
 bg_color = Color(0.36282945, 0.36282948, 0.36282933, 1)
@@ -14,7 +14,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="GetTargetInRange" type="PanelContainer"]
+[node name="GainMana" type="PanelContainer"]
+z_index = 1
 custom_minimum_size = Vector2(100, 150)
 anchors_preset = -1
 anchor_right = 0.21822916
@@ -23,8 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_21vuq")
-script = ExtResource("1_y6r2o")
-funcID = 3
+script = ExtResource("1_muhpl")
+funcID = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -46,7 +47,7 @@ size_flags_vertical = 6
 [node name="Label" type="Label" parent="HBoxContainer/Container/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Finds a target in range"
+text = "Gain one mana"
 
 [node name="Container2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

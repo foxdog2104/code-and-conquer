@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://chhh8xd0ksbaw"]
+
+[ext_resource type="Script" uid="uid://bx5vlsgp6j57r" path="res://Scenes/Tower stuff/fireball_explosion.gd" id="1_a7ypf"]
+[ext_resource type="Texture2D" uid="uid://6xfb02emie10" path="res://Assets/manablast.png" id="2_a7ypf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ryflu"]
+radius = 197.01015
+
+[node name="Manablast" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_a7ypf")
+bulletDamage = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ryflu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_a7ypf")
+
+[node name="vTimer" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[connection signal="timeout" from="vTimer" to="." method="_on_v_timer_timeout"]

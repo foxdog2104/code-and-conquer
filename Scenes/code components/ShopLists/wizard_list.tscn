@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxo5ektrl86p0"]
+
+[ext_resource type="Script" uid="uid://dextfd5jxe3tk" path="res://Scripts/Tower stuff/wizard_list.gd" id="1_whulq"]
+[ext_resource type="PackedScene" uid="uid://dkfrsdks7yvdd" path="res://Scenes/code components/CodeComponents/gain_mana.tscn" id="2_8qss3"]
+[ext_resource type="PackedScene" uid="uid://b7nvg81etacpf" path="res://Scenes/code components/CodeComponents/mana_blast.tscn" id="3_shcyy"]
+[ext_resource type="PackedScene" uid="uid://cbsl3gjbcg2mn" path="res://Scenes/code components/CodeComponents/fireball.tscn" id="4_80u5m"]
+
+[node name="Wizard" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_whulq")
+titleText = "Activates when mana is 10"
+
+[node name="gain_mana" parent="." instance=ExtResource("2_8qss3")]
+layout_mode = 2
+
+[node name="manaBlast" parent="." instance=ExtResource("3_shcyy")]
+layout_mode = 2
+
+[node name="fireball" parent="." instance=ExtResource("4_80u5m")]
+layout_mode = 2

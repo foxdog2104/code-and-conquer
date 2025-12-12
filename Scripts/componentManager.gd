@@ -53,10 +53,10 @@ func addCompType(newTab:PackedScene):
 		#rather than it just being hardcoded
 		#but im stressed and don't have time
 		#oh btw the reason this doesn't change the style is 
-		myListTitle.text = "Activates every second \n when an enemy \n comes in range"
 		myListHeader.add_theme_stylebox_override("Ballista",preload("res://Assets/Styles/Ballista.tres"))# = preload("res://Assets/Styles/Ballista.tres")
 		print(testingName)
 		var temp = newTab.instantiate()
+		myListTitle.text = temp.titleText
 		shopTabs.add_child(temp)
 		match listValue:
 			1:
@@ -65,8 +65,12 @@ func addCompType(newTab:PackedScene):
 				print("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
 			2:
 				myWorkspace.t2ShopNode = temp
+				print(myWorkspace.t2ShopNode)
+				print("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
 			3:
 				myWorkspace.t3ShopNode = temp
+				print(myWorkspace.t3ShopNode)
+				print("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
 		self.hasComponent = true
 		print("Tab added")
 	else:
@@ -74,6 +78,8 @@ func addCompType(newTab:PackedScene):
 		pass
 
 func clearCompType():
+	print(self.hasComponent)
+	print(self.listValue)
 	if (self.hasComponent == true):
 		myListTitle.text = "None"
 		myHeaderButton.visible = false
@@ -86,11 +92,11 @@ func clearCompType():
 				myWorkspace.clearList(self.listValue)
 				myWorkspace.t1ShopNode.queue_free()
 			2:
-				print(myWorkspace.t1ShopNode)
+				print(myWorkspace.t2ShopNode)
 				myWorkspace.clearList(self.listValue)
 				myWorkspace.t2ShopNode.queue_free()
 			3:
-				print(myWorkspace.t1ShopNode)
+				print(myWorkspace.t3ShopNode)
 				myWorkspace.clearList(self.listValue)
 				myWorkspace.t3ShopNode.queue_free()
 		

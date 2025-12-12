@@ -69,4 +69,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Remove"
 
+[connection signal="pressed" from="HBoxContainer/Container2/Move_Up" to="." method="_on_move_up_pressed"]
+[connection signal="pressed" from="HBoxContainer/Container2/Move_Down" to="." method="_on_move_down_pressed"]
 [connection signal="pressed" from="HBoxContainer/Container2/Remove" to="." method="_on_remove_pressed"]

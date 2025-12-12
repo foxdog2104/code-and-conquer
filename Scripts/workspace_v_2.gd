@@ -42,7 +42,7 @@ func _on_finish_button_pressed():
 		for child: PanelContainer in t2.get_children():
 			if "funcID" in child:
 				tempArray.append(child.funcID)
-		var temp = t1ShopNode.nodeToLoad
+		var temp = t2ShopNode.nodeToLoad.instantiate()
 		temp.funcOrder = tempArray
 		temp.spawnLocation = myTower.spawnLocation
 		print("My spawn location: ", myTower.spawnLocation)
@@ -53,7 +53,7 @@ func _on_finish_button_pressed():
 		for child: PanelContainer in t3.get_children():
 			if "funcID" in child:
 				tempArray.append(child.funcID)
-		var temp = t1ShopNode.nodeToLoad
+		var temp = t3ShopNode.nodeToLoad.instantiate()
 		temp.funcOrder = tempArray
 		temp.spawnLocation = myTower.spawnLocation
 		print("My spawn location: ", myTower.spawnLocation)

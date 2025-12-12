@@ -1,0 +1,35 @@
+extends CharacterBody2D
+
+var speed = 1000
+var pathName = ""
+var bulletDamage = 3.0
+
+var target
+
+var spawnLocation:Vector2
+var bulletContainer:Node
+@onready var fireball_sfx: AudioStreamPlayer = $FireballSfx
+@onready var fireBall:PackedScene = preload("res://Scenes/Tower stuff/fireball_explosion.tscn")
+
+func _ready() -> void:
+		fireball_sfx.play()
+
+
+func _physics_process(_delta: float) -> void:
+	
+	if target: 
+		velocity = global_position.direction_to(target.global_position) * speed
+		
+		look_at(target.global_position)
+		
+		move_and_slide()
+	else:
+		return
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if (is_instance_valid(target) && target is PathFollow2D):
+		var tempBullet = fireBall.instantiate()
+		tempBullet.position = self.position
+		bulletContainer.add_child(tempBullet)
+		queue_free()

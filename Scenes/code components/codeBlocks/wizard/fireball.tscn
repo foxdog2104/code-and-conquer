@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpwnuw6mnqaqv"]
+[gd_scene load_steps=3 format=3 uid="uid://bcfsirm6bsclk"]
 
-[ext_resource type="Script" uid="uid://rrye72sagf1r" path="res://Scripts/code_component.gd" id="1_y6r2o"]
+[ext_resource type="Script" uid="uid://rrye72sagf1r" path="res://Scripts/code_component.gd" id="1_xh51g"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21vuq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yxhx"]
 bg_color = Color(0.36282945, 0.36282948, 0.36282933, 1)
 border_width_left = 5
 border_width_top = 5
@@ -14,7 +14,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="GetTargetInRange" type="PanelContainer"]
+[node name="Fireball" type="PanelContainer"]
+z_index = 1
 custom_minimum_size = Vector2(100, 150)
 anchors_preset = -1
 anchor_right = 0.21822916
@@ -22,9 +23,9 @@ anchor_bottom = 0.18240741
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_21vuq")
-script = ExtResource("1_y6r2o")
-funcID = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5yxhx")
+script = ExtResource("1_xh51g")
+funcID = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
@@ -46,7 +47,10 @@ size_flags_vertical = 6
 [node name="Label" type="Label" parent="HBoxContainer/Container/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Finds a target in range"
+text = "Consume 5 mana
+Fire a powerful exploding
+fireball at target"
+horizontal_alignment = 1
 
 [node name="Container2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

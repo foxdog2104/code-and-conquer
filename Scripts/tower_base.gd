@@ -6,6 +6,15 @@ extends Area2D
 
 var spawnLocation:Vector2
 
+#tower variables
+@onready var arrow:PackedScene = preload("res://Scenes/Tower stuff/ballista_arrow.tscn")
+var enemyArray:Array[PathFollow2D]
+var currentTarget
+var loadedArrows:int = 0
+var currentMana:int = 0
+var currentTargets = []
+
+
 func _ready():
 	
 	self.global_position = get_global_mouse_position()
