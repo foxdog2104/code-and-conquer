@@ -20,6 +20,10 @@ var myComponentID = null
 var mouseHovering = false
 
 func _process(_delta):
+	if myWorkspace.visible:
+		monitorable = true
+	else: 
+		monitorable = false
 	if (Input.is_action_just_pressed("secret")):
 		print(testingName,self.mouseHovering)
 		print(self.mouseHovering)
@@ -99,6 +103,7 @@ func addCodeBlock(newBlock:PackedScene):
 	if self.hasComponent == true:
 		var temp = newBlock.instantiate()
 		myList.add_child(temp)
+		GameState.spend(3)
 	elif self.hasComponent == false:
 		print("Please add a component")
 	pass
